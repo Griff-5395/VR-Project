@@ -15,7 +15,11 @@ public class LaunchProjectile : MonoBehaviour
     [Tooltip("The speed at which the projectile is launched")]
     public float launchSpeed = 1.0f;
 
-    public void Fire()
+    public void RepeatFire()
+    {
+        InvokeRepeating("Fire", 0, 0.3f);
+    }
+         public void Fire()
     {
         GameObject newObject = Instantiate(projectilePrefab, startPoint.position, startPoint.rotation);
 
